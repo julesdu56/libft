@@ -1,34 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jumourot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/29 16:13:24 by jumourot          #+#    #+#             */
-/*   Updated: 2019/04/29 16:13:26 by jumourot         ###   ########.fr       */
+/*   Created: 2019/04/29 16:51:13 by jumourot          #+#    #+#             */
+/*   Updated: 2019/04/29 16:52:57 by jumourot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void		ft_putchar(char c);
-
-void		ft_putnbr(int n)
+void		ft_putchar_fd(char c, int fd)
 {
-	long long nb;
-
-	nb = (int)n;
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = nb * -1;
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else
-		ft_putchar(nb + 48);
+	write(fd, &c, 1);
 }
