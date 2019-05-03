@@ -1,28 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jumourot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/03 13:31:25 by jumourot          #+#    #+#             */
-/*   Updated: 2019/05/03 14:24:49 by jumourot         ###   ########.fr       */
+/*   Created: 2019/05/03 12:16:57 by jumourot          #+#    #+#             */
+/*   Updated: 2019/05/03 14:27:00 by jumourot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(char *s1, char *s2)
+char		*ft_strstr(const char *str, const char *to_find)
 {
-	int i;
-	int j;
+	size_t i;
+	size_t j;
 
 	i = 0;
-	j = 0;
-	while (s1[i] == s2[j] && s1[i] != '\0' && s2[j] != '\0')
+	if (ft_strcmp(str, "") == 0 && ft_strcmp(to_find, "") == 0)
+		return ((char*)str);
+	while (str[i])
 	{
+		j = 0;
+		while (to_find[j] == str[i + j])
+		{
+			if (to_find[j + 1] == '\0')
+			{
+				return (( char *)(str + i));
+			}
+			j++;
+		}
 		i++;
-		j++;
 	}
-	return (s1[i] - s2[j]);
+	return (NULL);
+}
+
+int		main()
+{
+	printf("TEST : %s\n", ft_strstr("iiii", ""));
+	return (0);
 }
