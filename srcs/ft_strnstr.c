@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jumourot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/03 12:16:57 by jumourot          #+#    #+#             */
-/*   Updated: 2019/05/11 18:47:57 by jumourot         ###   ########.fr       */
+/*   Created: 2019/05/11 18:49:13 by jumourot          #+#    #+#             */
+/*   Updated: 2019/05/11 18:52:46 by jumourot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strstr(const char *str, const char *to_find)
+char		*ft_strstr(const char *str, const char *to_find, size_t n)
 {
 	size_t i;
 	size_t j;
@@ -20,7 +20,7 @@ char		*ft_strstr(const char *str, const char *to_find)
 	i = 0;
 	if (ft_strcmp(str, "") == 0 && ft_strcmp(to_find, "") == 0)
 		return ((char*)str);
-	while (str[i])
+	while (str[i] && i < n)
 	{
 		j = 0;
 		while (to_find[j] == str[i + j])

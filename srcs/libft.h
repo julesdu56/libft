@@ -37,7 +37,7 @@ int			ft_strcmp(char *s1, char *s2);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_strstr(const char *s1, const char *s2);
 char		*ft_strnstr(const char *s1, const char *s2, size_t n);
-
+char		*ft_strcpy(char *dest, const char *src);
 
 
 #endif

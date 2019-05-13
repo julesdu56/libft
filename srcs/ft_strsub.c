@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jumourot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/03 12:16:57 by jumourot          #+#    #+#             */
-/*   Updated: 2019/05/11 18:47:57 by jumourot         ###   ########.fr       */
+/*   Created: 2019/05/11 16:40:02 by jumourot          #+#    #+#             */
+/*   Updated: 2019/05/11 17:36:03 by jumourot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strstr(const char *str, const char *to_find)
+char		*ft_strsub(char const *s,unsigned int start, size_t len)
 {
-	size_t i;
-	size_t j;
-
+	char	*str;
+	size_t	i;
+ 
 	i = 0;
-	if (ft_strcmp(str, "") == 0 && ft_strcmp(to_find, "") == 0)
-		return ((char*)str);
-	while (str[i])
-	{
-		j = 0;
-		while (to_find[j] == str[i + j])
-		{
-			if (to_find[j + 1] == '\0')
-			{
-				return (( char *)(str + i));
-			}
-			j++;
-		}
-		i++;
-	}
-	return (NULL);
+	if (s == NULL || !(str = ft_strnew(len)))
+			return (NULL);
+ 	while (i < len && s[start])
+		str[i++] = s[start++];
+	str[i] = '\0';
+	return (str);
 }
