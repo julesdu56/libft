@@ -6,13 +6,13 @@
 /*   By: jumourot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/10 17:51:13 by jumourot          #+#    #+#             */
-/*   Updated: 2019/05/10 17:51:21 by jumourot         ###   ########.fr       */
+/*   Updated: 2019/05/13 08:22:15 by jumourot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-nclude "libft.h"
+#include "libft.h"
 
 int		ft_islower(int c)
 {
-		return (c >= 'a' && c <= 'z');
+	return (c >= 'a' && c <= 'z');
 }

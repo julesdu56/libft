@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jumourot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/10 17:51:50 by jumourot          #+#    #+#             */
-/*   Updated: 2019/05/10 17:52:05 by jumourot         ###   ########.fr       */
+/*   Created: 2019/05/10 17:47:28 by jumourot          #+#    #+#             */
+/*   Updated: 2019/05/13 08:23:43 by jumourot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int		ft_isalpha(int c)
 {
-		return (ft_isupper(c) || ft_islower(c));
+	return (ft_isupper(c) == 1 || ft_islower(c) == 1);
 }

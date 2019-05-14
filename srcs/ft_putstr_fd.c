@@ -1,17 +1,20 @@
-void		ft_putchar_fd(char c, int fd
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jumourot <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/13 07:47:06 by jumourot          #+#    #+#             */
+/*   Updated: 2019/05/13 07:47:41 by jumourot         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+void	ft_putstr_fd(char const *s, int fd)
 {
-	write(fd, &c, 1);
+	if (s == 0)
+		return ;
+	write(fd, s, ft_strlen(s));
 }
-
-void		ft_putstr_fd(char const *s, int fd)
-{
-	int i;
-
-	i = 0;
-	while(s[i])
-	{
-		ft_putchar_fd(str[i]);
-		i++;
-	}
-}
-

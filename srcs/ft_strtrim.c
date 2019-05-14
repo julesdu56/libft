@@ -6,7 +6,7 @@
 /*   By: jumourot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/10 17:31:39 by jumourot          #+#    #+#             */
-/*   Updated: 2019/05/11 18:45:45 by jumourot         ###   ########.fr       */
+/*   Updated: 2019/05/13 07:12:21 by jumourot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 static int			ft_is_space(char c)
 {
-		if (c == ' ' || c == '\n' || c == '\t')
-					return (1);
-		return (0);
+	if (c == ' ' || c == '\n' || c == '\t')
+		return (1);
+	return (0);
 }
 
 static size_t		search_len(const char *s)
 {
-	int 	i;
+	int		i;
 	size_t	len;
 
 	len = ft_strlen(s);
@@ -42,18 +42,18 @@ static size_t		search_len(const char *s)
 	return (len);
 }
 
-char		*ft_strtrim(char const *s)
+char				*ft_strtrim(char const *s)
 {
-		char	*str;
-		int		i;
-		size_t	len;
+	char	*str;
+	int		i;
+	size_t	len;
 
-		len = search_len(s);
-		if(!(str = ft_strnew(len)))
-			return (NULL);
-		i = 0;
-		while (ft_is_space(s[i]) == 1)
-			i++;
-		ft_strcpy(str, &s[i]);
-		return (str);
+	len = search_len(s);
+	if (!(str = ft_strnew(len)))
+		return (NULL);
+	i = 0;
+	while (ft_is_space(s[i]) == 1)
+		i++;
+	ft_strcpy(str, &s[i]);
+	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: jumourot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 12:16:57 by jumourot          #+#    #+#             */
-/*   Updated: 2019/05/11 18:47:57 by jumourot         ###   ########.fr       */
+/*   Updated: 2019/05/13 07:19:27 by jumourot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@ char		*ft_strstr(const char *str, const char *to_find)
 		while (to_find[j] == str[i + j])
 		{
 			if (to_find[j + 1] == '\0')
-			{
-				return (( char *)(str + i));
-			}
+				return ((char *)(str + i));
 			j++;
 		}
 		i++;

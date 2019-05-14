@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jumourot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/30 18:24:42 by jumourot          #+#    #+#             */
-/*   Updated: 2019/04/30 19:09:14 by jumourot         ###   ########.fr       */
+/*   Created: 2019/05/13 06:28:46 by jumourot          #+#    #+#             */
+/*   Updated: 2019/05/13 12:22:56 by jumourot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_itoa(int n)
+char				*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*str;
-	int 	i;
-	int		is_neg;
-	
-	is_neg = (nb == '-') ? -1 : 1;
-	str = malloc(sizeof(*char) * n)
+	char			*str;
+	size_t			len;
+	unsigned int	i;
+
 	i = 0;
+	if (s == NULL || f == NULL)
+		return (NULL);
+	len = strlen(s);
+	if (!(str = ft_strnew(len)))
+		while (i < len)
+		{
+			str[i] = f(i, str[i]);
+			i++;
+		}
 	return (str);
 }
-		

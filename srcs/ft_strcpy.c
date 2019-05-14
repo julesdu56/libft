@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jumourot <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/13 07:28:27 by jumourot          #+#    #+#             */
+/*   Updated: 2019/05/13 11:58:35 by jumourot         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strcpy(char *dest, const char *src)
@@ -12,21 +24,4 @@ char	*ft_strcpy(char *dest, const char *src)
 	}
 	dest[i] = '\0';
 	return (dest);
-}
-
-char	*ft_strdup(char *src)
-{
-	int		i;
-	int		size;
-	char	*str;
-
-	i = 0;
-	size = 0;
-	str = NULL;
-	while (src[size])
-		size++;
-	if (!(str = malloc(sizeof(char) * size)))
-		return (NULL);
-	ft_strcpy(str, src);
-	return (str);
 }
