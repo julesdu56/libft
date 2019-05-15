@@ -39,13 +39,12 @@ int			count_word(char const *s, char c)
 	return (num_of_word);
 }
 
-char			allou_string(char const *s, char **tab, int c)
+void			allou_string(char const *s, char **tab, int c)
 {
 	int i;
 	int j;
 
 	j = 0;
-	i = 0;
 	while (*s)
 	{
 		if (*s == c)
@@ -54,18 +53,19 @@ char			allou_string(char const *s, char **tab, int c)
 		}
 		else if (*s != c)
 		{                                                                                              
+			i = 0;
 			while (s[i] != c && s[i] != '\0')
 			{
 				i++;
 			}
 			if (!(tab[j] = (char*)malloc(sizeof(char) * i + 1)))
-			strncpy(tab[j], s, i);
+				return ;
+			ft_strncpy(tab[j], s, i);
 			j++;
 			s = s + i;
 		}
 	}
 	tab[j] = NULL;
-	return (tab);
 }
 
 char		**ft_strsplit(char const *s, char c)
@@ -74,9 +74,9 @@ char		**ft_strsplit(char const *s, char c)
 	int len;
 
 	len = count_word(s, c);
-	if (!(tab =(char**)malloc(sizeof(tab) * (word + 1))))
+	if (!(tab =(char**)malloc(sizeof(tab) * (len + 1))))
 		return (NULL);
-	tab = allou_string(s, tab, c);
+	allou_string(s, tab, c);
 	return (tab);
 }
 
@@ -85,7 +85,7 @@ int			main()
 	char		**word;
 	int			i = 0;
 
-	word = ft_strsplit("boulbi very broken ");
+	word = ft_strsplit("", ' ');
 	while (word[i] != NULL)
 	{
 		printf("%s\n", word[i]);
