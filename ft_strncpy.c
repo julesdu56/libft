@@ -9,19 +9,22 @@
 /*   Updated: 2019/05/17 12:02:09 by jumourot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, const char *src, size_t n)
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
 	size_t i;
 
 	i = 0;
-	while (src[i] && i < n)
+	while ((src[i] != '\0') && (i < len))
 	{
-		dest[i] = src[i];
+		dst[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	while (i < len)
+	{
+		dst[i] = '\0';
+		i++;
+	}
+	return (dst);
 }

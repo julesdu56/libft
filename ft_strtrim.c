@@ -23,7 +23,7 @@ static int			ft_is_space(char c)
 static size_t		search_len(const char *s)
 {
 	int		i;
-	size_t	len;
+	int		len;
 
 	len = ft_strlen(s);
 	i = len - 1;
