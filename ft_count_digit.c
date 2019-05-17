@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_count_digit.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jumourot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/22 12:29:51 by jumourot          #+#    #+#             */
-/*   Updated: 2019/05/17 11:34:35 by jumourot         ###   ########.fr       */
+/*   Created: 2019/05/17 14:53:23 by jumourot          #+#    #+#             */
+/*   Updated: 2019/05/17 15:10:39 by jumourot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+int		ft_count_digit(int n)
 {
-	int		i;
-	int		size;
-	char	*str;
+	int	j;
 
-	i = 0;
-	size = 0;
-	str = NULL;
-	while (src[size])
-		size++;
-	if (!(str = malloc(sizeof(char) * size)))
-		return (NULL);
-	ft_strcpy(str, src);
-	return (str);
+	j = 1;
+	while (n / 10)
+	{
+		n = n / 10;
+		++j;
+	}
+	return (j);
 }

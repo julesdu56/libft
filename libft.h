@@ -6,7 +6,7 @@
 /*   By: jumourot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 07:12:48 by jumourot          #+#    #+#             */
-/*   Updated: 2019/05/14 17:27:34 by jumourot         ###   ########.fr       */
+/*   Updated: 2019/05/17 14:54:44 by jumourot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <string.h>
 
+int					ft_count_digit(int n);
 void				*ft_memset(void	*b, int		c, size_t	len);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dst, const void	*src, size_t n);

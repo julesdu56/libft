@@ -1,55 +1,58 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jumourot <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/17 17:44:50 by jumourot          #+#    #+#             */
+/*   Updated: 2019/05/17 17:45:34 by jumourot         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-#include <stdio.h>
 
-int     compteur_nb(int n)
+static int	get_len(long n)
 {
-    int i;
+	int		neg;
+	int		len;
 
-    i = 0;
-    while (n > 0)
-    {
-       n = n / 10;
-       i++;
-    }
-    return (i);
+	neg = 0;
+	len = 1;
+	if (n < 0)
+	{
+		neg = 1;
+		n = -n;
+	}
+	while (n > 9)
+	{
+		len++;
+		n /= 10;
+	}
+	return (len + neg);
 }
 
-
-char    *ft_itoa(int n)
+char		*ft_itoa(int n)
 {
-    char    *str;
-    int     stock;
-    int     len;
-    int     i; 
+	int		len;
+	long	nb;
+	char	*num;
 
-    len = compteur_nb(n);
-    i = len - 1;
-    if (n < 0)
-        len += 1;
-    str = malloc(sizeof(char) * (len + 1));
-    while(n > 0)
-    {
-        stock = n % 10;
-        n /= 10;        
-        str[i] = stock + 48;
-        i--;
-    }
-    str[len] ='\0';
-    return (str);
-}
-
-
-int     main(int argc, char ** argv)
-{
-    int i;
-
-    i = 0;
-    (void)argc;
-    while (argv[i])
-    {
-            printf("%s", ft_itoa(ft_atoi(argv[i])));
-            i++;
-    }
-    printf("\n");
-    return (0);
+	nb = n;
+	len = get_len(nb);
+	if (!(num = ft_strnew(len)))
+		return (NULL);
+	if (nb < 0)
+	{
+		num[0] = '-';
+		nb = -nb;
+	}
+	if (nb == 0)
+		num[0] = '0';
+	while (len-- >= 0 && nb != 0)
+	{
+		num[len] = nb % 10 + '0';
+		nb /= 10;
+	}
+	return (num);
 }

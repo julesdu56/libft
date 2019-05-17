@@ -6,13 +6,11 @@
 /*   By: jumourot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/29 16:13:24 by jumourot          #+#    #+#             */
-/*   Updated: 2019/04/29 16:13:26 by jumourot         ###   ########.fr       */
+/*   Updated: 2019/05/17 13:34:08 by jumourot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void		ft_putchar(char c);
 
 void		ft_putnbr(int n)
 {

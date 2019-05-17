@@ -3,7 +3,7 @@ NAME = libft.a
 
 FLGS =-Wall -Wextra -Werror
 
-SRCS =ft_isalnum.c\
+SRCS = ft_isalnum.c\
 	  ft_isalpha.c\
 	  ft_isascii.c\
 	  ft_isdigit.c\
@@ -54,7 +54,11 @@ SRCS =ft_isalnum.c\
 	  ft_putnbr.c\
 	  ft_putendl_fd.c\
 	  ft_putendl.c\
+	  ft_strlcat.c\
 	  ft_strsplit.c\
+	  ft_count_digit.c\
+	  ft_itoa.c\
+	  ft_striteri.c\
 
 OBJS =$(SRCS:%.c=%.o)
 

@@ -6,7 +6,7 @@
 /*   By: jumourot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 07:31:56 by jumourot          #+#    #+#             */
-/*   Updated: 2019/05/13 10:07:44 by jumourot         ###   ########.fr       */
+/*   Updated: 2019/05/17 13:31:32 by jumourot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,7 @@ size_t		ft_strlen(const char *s)
 	size_t	i;
 
 	i = 0;
-	if (s == NULL)
-		return (0);
-	else
-		while (s[i])
-			i++;
+	while (s[i])
+		i++;
 	return (i);
 }

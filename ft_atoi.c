@@ -6,11 +6,12 @@
 /*   By: jumourot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/29 16:12:47 by jumourot          #+#    #+#             */
-/*   Updated: 2019/05/13 07:51:27 by jumourot         ###   ########.fr       */
+/*   Updated: 2019/05/17 20:20:43 by jumourot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int		ft_atoi(char *str)
 {
