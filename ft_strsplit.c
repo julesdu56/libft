@@ -12,66 +12,63 @@
 
 #include "libft.h"
 
-int			count_word(char const *s, char c)
+static int		count_words(const char *s, char c)
 {
-	int		i;
-	int		num_of_word;
+	int		count;
+	int		word;
 
-	i = 0;
-	num_of_word = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-		{
-			i++;
-		}
-		else if (s[i] != c)
-		{
-			num_of_word++;
-			while (s[i] != c && s[i] != '\0')
-			{
-				i++;
-			}
-		}
-	}
-	return (num_of_word);
-}
-
-void		allou_string(char const *s, char **tab, int c)
-{
-	int		i;
-	int		j;
-
-	j = 0;
+	count = 0;
+	word = 0;
+	if (!s)
+		return (0);
 	while (*s)
 	{
-		if (*s == c)
+		if (word == 0 && *s != c)
 		{
-			s++;
+			word = 1;
+			count++;
 		}
-		else if (*s != c)
-		{
-			i = 0;
-			while (s[i] != c && s[i] != '\0')
-				i++;
-			if (!(tab[j] = (char*)malloc(sizeof(char) * i + 1)))
-				return ;
-			ft_strncpy(tab[j], s, i);
-			j++;
-			s = s + i;
-		}
+		else if (*s == c)
+			word = 0;
+		s++;
 	}
-	tab[j] = NULL;
+	return (count);
 }
 
-char		**ft_strsplit(char const *s, char c)
+static int		ft_wordslen(const char *s, char c)
 {
-	char	**tab;
-	int		len;
+	int		i;
 
-	len = count_word(s, c);
-	if (!(tab = (char**)malloc(sizeof(tab) * (len + 1))))
+	i = 0;
+	while (*s && *s != c)
+	{
+		i++;
+		s++;
+	}
+	return (i);
+}
+
+char			**ft_strsplit(char const *s, char c)
+{
+	int		count;
+	char	**tab;
+	int		i;
+
+	i = 0;
+	count = count_words(s, c);
+	if (!s)
 		return (NULL);
-	allou_string(s, tab, c);
+	if (!(tab = malloc(sizeof(char *) * (count + 1))))
+		return (NULL);
+	while (count--)
+	{
+		while (*s && *s == c)
+			s++;
+		if (!(tab[i] = ft_strsub(s, 0, ft_wordslen(s, c))))
+			return (NULL);
+		s += ft_wordslen(s, c);
+		i++;
+	}
+	tab[i] = 0;
 	return (tab);
 }

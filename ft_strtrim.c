@@ -64,9 +64,3 @@ char				*ft_strtrim(char const *s)
 	str[j] = '\0';
 	return (str);
 }
-
-int					main(void)
-{
-	printf("TEST: %s\n", ft_strtrim("\0"));
-	return (0);
-}

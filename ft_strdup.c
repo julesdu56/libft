@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
@@ -12,19 +12,19 @@
 
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+char	*ft_strdup(const char *s1)
 {
 	int		i;
-	int		size;
-	char	*str;
+	char	*dest;
 
 	i = 0;
-	size = 0;
-	str = NULL;
-	while (src[size])
-		size++;
-	if (!(str = malloc(sizeof(char) * size)))
+	if (!(dest = (char *)malloc(sizeof(char) * ft_strlen(s1) + 1)))
 		return (NULL);
-	ft_strcpy(str, src);
-	return (str);
+	while (s1[i])
+	{
+		dest[i] = s1[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
