@@ -33,8 +33,11 @@ void		*ft_memmove(void *dest, const void *src, size_t n)
 	{
 		while (n > 0)
 		{
-			*des++ = *str++;
-			n--;
+			if (dest != NULL && src != NULL)
+			{
+				*des++ = *str++;
+				n--;
+			}		
 		}
 	}
 	return (dest);

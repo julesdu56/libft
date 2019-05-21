@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
@@ -20,7 +19,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char	*psrc;
 
 	i = 0;
-	if (!ft_strcmp(src, ""))
+	if (dst == NULL && src == NULL && n > 0)
 		return (NULL);
 	pdst = (unsigned char*)dst;
 	psrc = (unsigned char*)src;
