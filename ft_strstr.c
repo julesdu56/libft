@@ -5,32 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jumourot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/03 12:16:57 by jumourot          #+#    #+#             */
-/*   Updated: 2019/05/13 07:19:27 by jumourot         ###   ########.fr       */
+/*   Created: 2019/11/04 11:46:54 by jumourot          #+#    #+#             */
+/*   Updated: 2019/11/04 12:19:24 by jumourot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *big, const char *little)
+char		*ft_strstr(const char *str, const char *to_find)
 {
-	unsigned int	i;
-	unsigned int	j;
+	int		len;
 
-	i = 0;
-	j = 0;
-	if ((ft_strlen(little)) == 0)
-		return ((char *)big);
-	while (big[i] != '\0')
+	len = ft_strlen(to_find);
+	if (len == 0)
+		return (char*)(str);
+	while (*str)
 	{
-		while (little[j] == big[i + j])
-		{
-			if (j == (ft_strlen(little) - 1))
-				return ((char *)big + i);
-			j++;
-		}
-		j = 0;
-		i++;
+		if (!ft_strncmp(str, to_find, len))
+			return (char*)(str);
+		str++;
 	}
-	return (NULL);
+	return (0);
 }

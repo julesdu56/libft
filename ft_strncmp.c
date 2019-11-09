@@ -6,7 +6,7 @@
 /*   By: jumourot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 13:31:25 by jumourot          #+#    #+#             */
-/*   Updated: 2019/08/29 11:47:13 by jumourot         ###   ########.fr       */
+/*   Updated: 2019/11/08 09:52:42 by jumourot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,5 @@ int			ft_strncmp(const char *s1, const char *s2, size_t n)
 		i++;
 	}
 	j = ((unsigned char)s1[i] - (unsigned char)s2[i]);
-	if (j > 0)
-		return (j / j);
-	if (j < 0)
-		return (-j / j);
-	else
-		return (0);
+	return (j);
 }

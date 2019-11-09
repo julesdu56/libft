@@ -6,11 +6,10 @@
 /*   By: jumourot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/10 13:22:11 by jumourot          #+#    #+#             */
-/*   Updated: 2019/08/27 15:40:56 by jumourot         ###   ########.fr       */
+/*   Updated: 2019/11/04 12:21:06 by jumourot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static char		*ft_concat_all(char *dest, char const *s1, char const *s2)
